@@ -21,3 +21,146 @@ body {
 */
 
 /* ----- zde zacni psat vlastni css ----- */
+
+body {
+    font-family: Rubik, sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.5em;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+}
+
+.zbozi {
+    display: flex;
+    border-radius: 10px;
+    /* ROHY: overflow: hidden; díky tomuhle se potomci flexboxu přizpůsobily jeho zaobleným rohům, ALE pak nečouhala ven bota... */
+    margin: 5rem auto 0 auto;
+    padding: 0;
+    width: 670px;
+    height: 440px;
+    box-shadow: 7px 7px 5px 0px rgba(200, 200, 200, 0.25);
+}
+
+.vizual {
+    background-image: linear-gradient(#06d7c1,#50cc49); /* GRADIENTY ♥ */
+    color: white;
+    padding: 30px;
+    width: 50%;
+    border-bottom-left-radius: 10px; /* ROHY: díky tomuhle nepotřebuju overflow:hidden - zaobluju jen rohy, které vyberu */
+    border-top-left-radius: 10px;
+    position: relative;
+}
+
+.detaily {
+    background-color: white;
+    padding: 30px;
+    width: 50%;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    position: relative;
+}
+
+.bota {
+    position: absolute; /* POZICOVÁNÍ vůči rodiči, to je .vizual */
+    right: 1px;
+    bottom: 4px;
+    z-index: 1;
+}
+
+.slogan {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 30px 0 0 0;
+}
+
+.cenovka {
+    text-align: right;
+    /* POZICOVÁNÍ margin-top: 230px; - nepřesné, raději position:absolute */
+    position: absolute;
+    right: 30px;
+    bottom: 30px;
+}
+
+.cena {
+    font-size: 28px;
+    font-weight: 500;
+    margin-bottom: 0.25em;
+}
+
+.zaruka {
+    font-size: 12px;
+    font-weight: 400;
+}
+
+.nazev {
+    text-transform: uppercase;
+    font-size: 20px;
+    font-weight: 500;
+    margin: 0;
+}
+
+.produkt {
+    color: #959595;
+    margin: 0.5em 0 0 0;
+}
+
+.popis {
+    line-height: 1.25em;
+    margin: 30px 0; 
+}
+
+.parametr {
+    margin: 0 0 0.5em 0;
+    padding-top: 30px;
+    border-top: #06d7c1 solid 2px;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+/*.velikosti {
+    display: flex;
+    justify-content: space-between;         --- chtěla jsem to zkusit pomocí FLEXBOXU, ale čísla jsou pak moc daleko od sebe.
+    padding: 0;
+    margin: 0 0 30px 0;
+}*/
+
+.velikosti {
+    padding: 0;
+    margin: 0;
+}
+
+.velikosti li {
+    display: inline-block;
+    margin: 0 10px;
+}
+
+.vybrana {
+    color: #f15f42;
+    border-radius: 50%;
+    border: #f15f42 solid 1px;
+    width: 28px;
+    height: 28px;
+    text-align: center; /* TEXT V KRUHU: tohle vystředí text v kruhu horizontálně */ 
+    line-height: 28px; /* TEXT V KRUHU: tohle vystředí text v kruhu vertikálně = stejná hodnota jako výška kruhu */
+}
+
+
+.tlacitko {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: white;
+    padding: 10px 30px;
+    background-color: #f15f42;
+    position: absolute; /* POZICOVÁNÍ: opět vůči rodiči .detaily (relative), aby zůstal 30px okraj */
+    left: 30px;
+    bottom: 30px;
+    border-radius: 5px;
+    box-shadow: 3px 3px 1px 0px rgba(200, 200, 200, 0.25);
+}
+
+/* DOTAZ: ahoj, nepoužila jsem k ničemu class "akce" - vše jsem přiřadila rovnou k a (.tlacitko) - zajímá mě, zda tam ten div (.akce) musel být? 
+přijde mi, že ty elementy jako h1 nebo p jsou tam taky v html samotné, takže nevím, proč to áčko jediné bylo obalené divem.
+zkusila jsem ho dát v html do komentáře - abych viděla, co se stane, když zmizí - a nic se nezměnilo. budu ráda za odpověď :) */
